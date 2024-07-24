@@ -19,8 +19,8 @@ app.use(express.static('public'));
 io.on('connection',(socket) => {
     console.log('An user has connected');
 
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
+    socket.on('message', (msg) => {
+        io.emit('message', msg);
     });
 
     socket.on('disconnect', () => {
